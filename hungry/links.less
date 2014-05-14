@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+    color: @link_color;
+    .transition(color .2s);
+
+
+    &:hover {
+        color: lighten(@link_color, 25%);
+    }
+
+    &:active {
+        color: lighten(@link_color, 50%);
+    }
+
+}
