@@ -4,11 +4,8 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
-            options: {
-                livereload: true,
-            },
             less: {
-                files: ['hungry/**/*.less'],
+                files: ['greyscale/**/*.less'],
                 tasks: ['less']
             },
         },
@@ -18,7 +15,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'hungry.css': ['hungry/hungry.less']
+                    'greyscale.css': ['greyscale/greyscale.less']
                 }
             }
         }
@@ -34,6 +31,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('default', ['less']);
