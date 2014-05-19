@@ -19,10 +19,29 @@ header {
     background: @white_color;
 }
 
+footer {
+
+    position: relative;
+    height: @footer_height;
+    background: #d1d1d1;
+}
+
 .wrapper {
     background: @background_color;
     width: 100%;
     min-height: 100%;
+    margin-bottom: -@footer_height;
+
+    &:after {
+        clear: both;
+        content: " ";
+        height: @footer_height;
+        display: block;
+    }
+
+    @media (min-width: @breakpoint_small) {
+        padding-top: @menu_horizontal_height;
+    }
 }
 
 /* Lists */

@@ -1,14 +1,20 @@
-.col_container {
+.container {
     width: 100%;
     max-width: @container_width;
     margin: 0 auto;
 
+    &:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+
     [class*='col_'] {
         float: left;
-        border: @col_border_width @col_border_style darken(@col_background_color, 10%);
         padding: @col_padding;
         width: 100%;
         vertical-align: top;
+        min-height: @col_min_height;
 
         > .content {
             background: @col_background_color;
