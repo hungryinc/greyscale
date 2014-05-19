@@ -4,20 +4,17 @@
     margin: 0 auto;
 
     [class*='col_'] {
-        display: inline-block;
+        float: left;
         border: @col_border_width @col_border_style darken(@col_background_color, 10%);
         padding: @col_padding;
+        width: 100%;
+        vertical-align: top;
 
         > .content {
             background: @col_background_color;
             width: 100%;
             min-height: 40px;
         }
-    }
-
-    [class*='col_'] {
-        width: 100%;
-        vertical-align: top;
     }
 
     @media (min-width: @breakpoint_small) {

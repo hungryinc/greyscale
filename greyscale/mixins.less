@@ -27,6 +27,12 @@
   -webkit-transition: @transition;
           transition: @transition;
 }
+
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+          transition: transform @transition;
+}
+
 .transition-property(@transition-property) {
   -webkit-transition-property: @transition-property;
           transition-property: @transition-property;
