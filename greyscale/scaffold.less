@@ -31,12 +31,17 @@ footer {
     width: 100%;
     min-height: 100%;
     margin-bottom: -@footer_height;
+    .transition-transform(.2s);
 
     &:after {
         clear: both;
         content: " ";
         height: @footer_height;
         display: block;
+    }
+
+    &.reveal_right {
+        .translate(-@reveal_right_width, 0);
     }
 
     @media (min-width: @breakpoint_small) {
