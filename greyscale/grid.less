@@ -15,6 +15,12 @@
         width: 100%;
         vertical-align: top;
         min-height: @col_min_height;
+        position: relative;
+        text-align: center;
+
+        [class*='col_'] {
+            padding: 20px;
+        }
 
         > .content {
             background: @col_background_color;
@@ -23,7 +29,25 @@
         }
     }
 
+    [class*='col_full_'] {
+        margin: 0 auto;
+        float: none;
+    }
+
+    .attach_bottom {
+        position: absolute;
+        bottom: 0;
+    }
+
     @media (min-width: @breakpoint_small) {
+
+        .col_full_quarter {
+            width: 25%;
+        }
+
+        .col_full_half {
+            width: 50% !important;
+        }
 
         .col_half {
             width: 100%;
@@ -33,11 +57,19 @@
             width: 50%;
         }
 
+        .col_sixth {
+            width: 16.6666666666666665%;
+        }
+
+        .col_eighth {
+            width: 12.5%;
+        }
+
     }
 
     @media (min-width: @breakpoint_medium) {
 
-        .col_full {
+        [class*='col_full'] {
             width: 100%;
         }
 
@@ -54,5 +86,6 @@
         }
 
     }
+
 
 }

@@ -13,6 +13,23 @@ html {
 
 body {
     background: @background_color;
+
+    @media (max-width: @breakpoint_small) {
+
+        &.reveal_right .wrapper {
+            .translate(-@reveal_right_width, 0);
+            z-index: auto;
+        }
+
+    }
+
+    &.reveal_top .wrapper {
+        .translate(0, 400px);        
+    }
+
+    &.reveal_top .attic {
+        z-index: auto;
+    }
 }
 
 header {
@@ -32,6 +49,7 @@ footer {
     min-height: 100%;
     margin-bottom: -@footer_height;
     .transition-transform(.2s);
+    overflow: hidden;
 
     &:after {
         clear: both;
@@ -44,13 +62,14 @@ footer {
         padding-top: @menu_horizontal_height;
     }
 
-    @media (max-width: @breakpoint_small) {
+}
 
-        &.reveal_right {
-            .translate(-@reveal_right_width, 0);
-        }
-
-    }
+.attic {
+    position: fixed;
+    background: black;
+    height: 400px;
+    width: 100%;
+    z-index: -1;
 }
 
 /* Lists */

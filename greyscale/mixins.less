@@ -1,3 +1,13 @@
+/*
+Set the Font size in REM and fallabck to px
+*/
+.font-size(@sizeValue) when not (@sizeValue = inherit) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
 /* Borders */
 .border-top-radius(@radius) {
   border-top-right-radius: @radius;

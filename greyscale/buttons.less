@@ -1,0 +1,19 @@
+.btn,
+button {
+    border: 1px @btn_default_border_color solid;
+    border-radius: 4px;
+    padding: 17px 30px;
+    line-height: 1;
+    vertical-align: middle;
+    color: #ababab;
+    cursor: pointer;
+    .transition(border-color .2s);
+
+    &:hover {
+        border-color: @btn_default_border_color_hover;
+    }
+
+    &:active {
+        border-color: @btn_default_border_color_active;
+    }
+}
