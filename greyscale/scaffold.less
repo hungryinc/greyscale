@@ -40,12 +40,16 @@ footer {
         display: block;
     }
 
-    &.reveal_right {
-        .translate(-@reveal_right_width, 0);
-    }
-
     @media (min-width: @breakpoint_small) {
         padding-top: @menu_horizontal_height;
+    }
+
+    @media (max-width: @breakpoint_small) {
+
+        &.reveal_right {
+            .translate(-@reveal_right_width, 0);
+        }
+
     }
 }
 
