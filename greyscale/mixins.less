@@ -32,6 +32,18 @@ Set the Font size in REM and fallabck to px
           box-shadow: @shadow;
 }
 
+/* Radial Gradient */
+.radial-gradient(@start, @start_stop, @end, @end_stop){
+    background: @start; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  @start @start_stop, @end @end_stop); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(@start_stop,@start), color-stop(@end_stop,@end)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  @start @start_stop,@end @end_stop); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  @start @start_stop,@end @end_stop); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  @start @start_stop,@end @end_stop); /* IE10+ */
+    background: radial-gradient(ellipse at center,  @start @start_stop,@end @end_stop); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 /* Transitions */
 .transition(@transition) {
   -webkit-transition: @transition;

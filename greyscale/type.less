@@ -1,10 +1,49 @@
+html {
+    font-size: 62.5%;
+}
+
 body {
     color: @type_color_default;
-    line-height: 1.5;
+    line-height: 1.625;
+    .font-size(1.6);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    .font-size(@h1_type_size);
+}
+
+h2 {
+    .font-size(@h2_type_size);
+    margin: 0;
+}
+
+h3 {
+    .font-size(@h3_type_size);
+    margin-bottom: 0;
+}
+
+h4 {
+    .font-size(@h4_type_size);
+}
+
+h5 {
+    .font-size(@h5_type_size);
+}
+
+h6 {
+    .font-size(@h6_type_size);
 }
 
 p {
 
+    &:first-of-type {
+        margin-top: 0;
+    }
+    
     &:last-of-type {
         margin-bottom: 30px;
     }

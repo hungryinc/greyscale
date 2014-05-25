@@ -25,7 +25,7 @@ a.menu_control {
         -moz-box-sizing: content-box;
         -webkit-box-sizing: content-box;
         box-sizing: content-box;
-        .transition-transform(.2s);
+        .transition-transform(.4s);
     }
 
     &:after {
@@ -54,7 +54,11 @@ a.menu_control {
         }
     }
 
-    &.close, &:active {
+    &:active {
+        .scale(.9, .9);
+    }
+
+    &.close {
         background: transparent;
         .transition(background 0 0);
         margin-top: 1px;
@@ -77,16 +81,12 @@ a.menu_control {
 
 body {
 
-    @media (max-width: @breakpoint_small) {
-
-        &.reveal_right .menu {
-            // .translate(-@reveal_right_width, 0);
-        }
-
+    &.reveal_top .menu {
+        .translate(0, @reveal_top_height);      
     }
 
-    &.reveal_top .menu {
-        .translate(0, 400px);        
+    &.reveal_right .menu {
+        z-index: 0;
     }
 
 }
@@ -107,7 +107,7 @@ body {
         position: absolute;
         height: @menu_horizontal_height;
         width: 100%;
-        z-index: 1;
+        z-index: 1 !important;
 
         ul {
             text-align: justify;

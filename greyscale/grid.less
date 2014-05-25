@@ -9,21 +9,27 @@
         clear: both;
     }
 
+    > [class*='col_'] {
+        background: @col_background_color;
+
+        &:nth-child(odd) {
+            background: darken(@col_background_color, 50%);
+        }
+    }
+
     [class*='col_'] {
         float: left;
-        padding: @col_padding;
         width: 100%;
         vertical-align: top;
         min-height: @col_min_height;
         position: relative;
-        text-align: center;
 
         [class*='col_'] {
             padding: 20px;
         }
 
         > .content {
-            background: @col_background_color;
+            padding: @col_padding;
             width: 100%;
             min-height: 40px;
         }
@@ -32,6 +38,15 @@
     [class*='col_full_'] {
         margin: 0 auto;
         float: none;
+    }
+
+    .col_full {
+        padding-right: @container_padding_right;
+        padding-left: @container_padding_left;
+
+        > .col_full {
+            padding: 0;
+        }
     }
 
     .attach_bottom {
@@ -73,16 +88,35 @@
             width: 100%;
         }
 
-        .col_half {
+        [class*='col_half'] {
             width: 50%;
+        }
+
+        .col_half_quarter {
+            padding: 0 10%;
         }
 
         .col_third {
             width: 33.33333333333332%;
         }
 
+        .col_two_thirds {
+            width: 66.666666666666665%;
+        }
+
         .col_quarter {
             width: 25%;
+        }
+
+        [class*='col_'] {
+            &.prefix_sixth {
+                padding-left: 16.666666667%;
+            }
+
+            &.suffix_sixth {
+                padding-right: 16.666666667%;
+            }
+
         }
 
     }
