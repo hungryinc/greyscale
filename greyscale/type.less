@@ -8,22 +8,26 @@ body {
     .font-size(1.6);
 }
 
+.center {
+    text-align: center;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+    margin: 0;
 }
 
 h1 {
     .font-size(@h1_type_size);
+    color: @h1_color
 }
 
 h2 {
     .font-size(@h2_type_size);
-    margin: 0;
 }
 
 h3 {
     .font-size(@h3_type_size);
-    margin-bottom: 0;
 }
 
 h4 {
