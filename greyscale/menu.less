@@ -98,12 +98,16 @@ body {
     right: 0;
     z-index: -1;
     border-left: @menu_border_width @menu_border_style @border_color;
-    padding: @menu_padding;
     width: @menu_vertical_width;
     .transition-transform(.2s);
 
+    > .container {
+        padding: @menu_padding;
+    }
+
     @media (min-width: @breakpoint_small) {
         border-bottom: @menu_border_width @menu_border_style @border_color;
+        border-left: none;
         position: absolute;
         height: @menu_horizontal_height;
         width: 100%;

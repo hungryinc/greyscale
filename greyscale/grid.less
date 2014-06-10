@@ -9,14 +9,6 @@
         clear: both;
     }
 
-    > [class*='col_'] {
-        background: @col_background_color;
-
-        &:nth-child(odd) {
-            background: darken(@col_background_color, 50%);
-        }
-    }
-
     [class*='col_'] {
         float: left;
         width: 100%;
@@ -36,6 +28,10 @@
 
         .bleed {
             padding: 0;
+        }
+
+        &.right {
+            text-align: right;
         }
     }
 
