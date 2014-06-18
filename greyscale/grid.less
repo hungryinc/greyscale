@@ -2,6 +2,8 @@
     width: 100%;
     max-width: @container_width;
     margin: 0 auto;
+    padding-right: @container_padding_right;
+    padding-left: @container_padding_left;
 
     &:after {
         content: " ";
@@ -15,13 +17,14 @@
         vertical-align: top;
         min-height: @col_min_height;
         position: relative;
+        padding-right: @col_padding_right;
+        padding-left: @col_padding_left;
 
         [class*='col_'] {
             padding: 20px;
         }
 
         > .content {
-            padding: @col_padding;
             width: 100%;
             min-height: 40px;
         }
@@ -38,15 +41,6 @@
     [class*='col_full_'] {
         margin: 0 auto;
         float: none;
-    }
-
-    .col_full {
-        padding-right: @container_padding_right;
-        padding-left: @container_padding_left;
-
-        > .col_full {
-            padding: 0;
-        }
     }
 
     .attach_bottom {
