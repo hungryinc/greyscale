@@ -1,6 +1,7 @@
 form {
 
-    input {
+    input,
+    textarea {
         border: none;
         border-radius: @input_border_radius;
         outline: @input_outline;
@@ -9,6 +10,17 @@ form {
         width: 100%;
         padding: 17px;
         margin-bottom: 10px;
+        resize: none;
+    }
+
+    [type="checkbox"] {
+        display: inline-block;
+        width: auto;
+
+        + label {
+            display: inline-block;
+            padding-left: 10px;
+        }
     }
 
 }

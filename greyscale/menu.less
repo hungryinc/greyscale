@@ -10,8 +10,9 @@ a.menu_control {
     .transition(background .1s .1s);
     right: 20px;
     top: 20px;
-    z-index: 1;
+    z-index: 3;
     margin: 6px 0;
+    text-align: left;
 
     &:before {
         display: inline-block;
@@ -81,25 +82,20 @@ a.menu_control {
 
 body {
 
-    &.reveal_top .menu {
-        .translate(0, @reveal_top_height);      
-    }
-
-    &.reveal_right .menu {
-        z-index: 0;
+    &.show_menu .menu {
+        height: auto;
     }
 
 }
 
 .menu {
-    height: 100%;
+    height: auto;
     background: @white;
     position: fixed;
     right: 0;
     z-index: -1;
-    border-left: @menu_border_width @menu_border_style @border_color;
     width: @menu_vertical_width;
-    .transition-transform(.2s);
+    .transition(.2s);
 
     > .container {
         padding: @menu_padding;
@@ -111,25 +107,24 @@ body {
         position: absolute;
         height: @menu_horizontal_height;
         width: 100%;
-        z-index: 1 !important;
 
         ul {
             text-align: justify;
-        }
 
-        ul:after {
-            width: 100%;
-            content: " ";
-            display: inline-block;
-            height: 0;
+            &:after {
+                width: 100%;
+                content: " ";
+                display: inline-block;
+                height: 0;
+            }
+        
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                white-space: nowrap;
+            }
         }
-
-        ul li {
-            display: inline-block;
-            vertical-align: middle;
-            text-align: center;
-        }
-
     }
 
     @media (min-width: @breakpoint_medium) {

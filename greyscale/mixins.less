@@ -47,6 +47,11 @@ Set the Font size in REM and fallabck to px
     user-select: none;
 }
 
+.backface-visibility(@visibility) {
+    backface-visibility: @visibility;
+    -webkit-backface-visibility: @visibility;
+}
+
 /* Drop Shadows */
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
@@ -122,6 +127,12 @@ Set the Font size in REM and fallabck to px
 }
 
 /* Transformations */
+.transform(@transform) {
+  -webkit-transform: @transform;
+      -ms-transform: @transform; // IE9 only
+          transform: @transform;
+}
+
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
       -ms-transform: rotate(@degrees); // IE9 only

@@ -19,3 +19,26 @@ button {
         border-color: @btn_default_border_color_active;
     }
 }
+
+.btn-toggle {
+    
+    .btn {
+        border-radius: 0;
+        padding: 13px 14px;
+
+        &:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .active {
+        background: @black;
+        color: @white;
+    }
+}

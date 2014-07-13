@@ -16,24 +16,8 @@ body {
 
     @media (max-width: @breakpoint_small) {
 
-        &.reveal_right .wrapper {
-            .translate(-@reveal_right_width, 0);
-            z-index: auto;
-        }        
-    
-        &.reveal_top.reveal_right .wrapper {
-            .translate(-@reveal_right_width, @reveal_top_height);
-        }
-
     }
 
-    &.reveal_top .wrapper {
-        .translate(0, @reveal_top_height);        
-    }
-
-    &.reveal_top .attic {
-        z-index: auto;
-    }
 }
 
 header {
@@ -62,15 +46,6 @@ footer {
         display: block;
     }
 
-}
-
-.attic {
-    position: fixed;
-    background: black;
-    height: @reveal_top_height;
-    width: 100%;
-    z-index: -1;
-    padding: 40px;
 }
 
 /* Lists */
