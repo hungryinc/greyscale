@@ -1,0 +1,47 @@
+.tooltip {
+    position: absolute;
+    color: #dadada;
+    background: rgba(0, 0, 0, .8);
+    padding: 20px;
+    border-radius: 4px;
+    .font-size(1.4);
+    width: 200px;
+    text-align: center;
+    margin-left: -98px;
+    bottom: 20px;
+    display: none;
+    opacity: 0;
+
+    &.active-add,
+    &.active-remove {
+        .transition(.2s);
+        display: block;
+    }
+
+    &.active-add-active,
+    &.active {
+        display: block;
+        opacity: 1;
+    }
+
+
+    * {
+        color: @white;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border: 6px transparent solid;
+        border-top-color: rgba(0, 0, 0, .8);
+        position: absolute;
+        left: calc(~"50% - 3px");
+        bottom: -12px;
+    }
+}
