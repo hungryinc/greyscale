@@ -1,0 +1,15 @@
+<div class="status-search">
+    <div class="container">
+
+        <h1>Looking for someone, something, anything?</h1>
+        
+        <form class="searcher" ng-submit="search(term)">
+        	<p>Type in a name, skill, or industry to find what you're looking for.</p>
+            <input type="text" class="input input--large" ng-model="term" search><button ng-click="search(term)" class="btn btn--orange btn--large">Search</button>
+
+            <hungry-typeahead class="search--results" select="select(scope, e)" src="results" ng-model="term" autocomplete="off"></hungry-typeahead>
+        </form>
+    </div>
+</div>
+
+<a href="/Greyscaleists" class="anchor--main">See who's checked in today.</a>

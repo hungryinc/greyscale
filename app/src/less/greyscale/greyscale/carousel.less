@@ -1,0 +1,328 @@
+.carousel {
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+    z-index: 0;
+
+    & * {
+        .no-select();
+    }
+
+    .background {
+        display: none;
+    }
+
+  &:hover {
+    .carousel-inner > .item .image {
+        &:after,
+        &:before {
+            opacity: 1;
+        }
+    }
+  }
+
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  &:hover .carousel-control ,
+  &:focus .carousel-control {
+    opacity: .3;
+    text-indent: 0;
+    color: @white;
+    text-decoration: none;
+  }
+
+
+  .slides {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .item {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    // .transition(.2s ease-in-out opacity);
+
+    &:after,
+    &:before {
+        content: " ";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;            
+        opacity: 1;
+        .transition(.2s opacity);
+        z-index: 5;
+    }
+
+    .image {
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+        }        
+    }
+
+    > .caption {
+      position: relative;
+      z-index: 5;
+      height: 40px;
+      margin: 0 auto -40px;
+      text-align: right;
+      width: 100%;
+      max-width: 1293px;
+      padding: 10px;
+    }
+
+    > img,
+    > a > img {
+      // .img-responsive();
+      line-height: 1;
+      display: block;
+    }
+
+    &.current {
+      z-index: 2;
+      opacity: 1;    
+    }
+  }
+}
+
+// Left/right controls for nav
+// ---------------------------
+
+.controls-container {
+    height: 100%;
+}
+
+.carousel-controls {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.carousel-control {
+  width: 30%;
+  opacity: 0;
+  color: @white;
+  text-align: center;
+  text-shadow: @white;
+  z-index: 3;
+  height: 100%;
+  padding: 15px;
+  position: absolute !important;
+  .transition(.4s);
+  text-indent: -100px;
+  .font-size(2.5);
+
+  &:carousel-control,
+  &:focus {
+    .carousel-control {
+        opacity: 1;
+    }
+  }
+
+
+  // Set gradients for backgrounds
+  &.left {
+    text-align: left;
+    left: 0;
+    // #gradient>.horizontal(rgba(0,0,0,.6), rgba(0,0,0,0), 0%, 100%);
+  }
+  &.right {
+    direction: rtl;
+    left: auto;
+    right: 0;
+    text-align: right;
+    // #gradient>.horizontal(rgba(0,0,0, 0), rgba(0,0,0,.6), 0%, 100%);
+  }
+}
+
+// Optional indicator pips
+// -----------------------------
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 120px;
+  margin-left: -60px;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    width:  10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    border: 1px solid @white;
+    border-radius: 10px;
+    cursor: default;
+  }
+  .active {
+    margin: 0;
+    width:  12px;
+    height: 12px;
+    background-color: @black;
+  }
+}
+
+// Optional captions
+// -----------------------------
+// Hidden by default for smaller viewports
+.carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: @white;
+  text-align: center;
+  text-shadow: @white;
+  & .btn {
+    text-shadow: none; // No shadow for button elements in carousel-caption
+  }
+}
+
+
+// Scale up controls for tablets and up
+@media screen and (min-width: @breakpoint_medium) {
+
+  // Scale up the controls a smidge
+  .carousel-control .glyphicon,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px;
+  }
+
+  // Show and left align the captions
+  .carousel-caption {
+    left: 20%;
+    right: 20%;
+    padding-bottom: 30px;
+  }
+
+  // Move up the indicators
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}
+
+/*
+Carousel
+*/
+.carousel {
+
+    .item {
+        -webkit-backface-visibility: hidden;
+        text-align: center;
+    }
+
+    .carousel-control {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        text-shadow: none;
+        padding: 35px;
+        width: auto;
+        // z-index: 1;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+
+        &.right:before,
+        &.left:before {
+            content: " ";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &.right:after,
+        &.left:after {
+            .font-size(3);
+            display: inline-block;
+            vertical-align: middle;
+            width: 16px;
+            height: 16px;
+            border: 4px rgba(0, 0, 0, .8) solid;
+            border-top: none;
+            border-right: none;
+        }
+
+        &.right:after {
+            content: " ";
+            .rotate(-135deg);         
+        }
+
+        &.left:after {
+            content: " ";            
+            .rotate(45deg);         
+        }
+
+    }
+    
+    .carousel-inner {
+        z-index: 4;
+
+        .current {
+            display: block;
+            position: relative;
+        }
+
+    }
+
+    .carousel-indicators {
+        z-index: 6;
+        margin-bottom: 5px;
+        margin-left: 0;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+
+        @media screen and (min-width: 768px) {
+            bottom: 0;
+        }
+
+        li {
+            margin: 0 4px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 12px;
+            height: 12px;
+
+            &.active {
+                background-color: transparent;               
+                border: 1px rgba(0, 0, 0, 0.3) solid;
+            }
+        }
+    }
+}

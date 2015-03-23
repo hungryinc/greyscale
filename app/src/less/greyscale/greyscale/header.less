@@ -1,0 +1,215 @@
+header {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+}
+.navbar{
+	background: @header-bg;
+	height: 50px;
+
+	.header-mobile{
+		display:none;
+	}
+
+
+	&.logo-center{
+
+		
+		.left-of-logo{
+			float:left;
+		}
+
+		.right-of-logo{
+			float:right;
+		}
+
+		.nav-logo{
+			position: absolute;
+			left: 50%;
+			margin-left: -46px;
+			display: block;
+		    height: 50px;
+		    text-align: center;
+		    line-height: 57px;
+		    font-weight: bold;
+		    font-size: 20px;
+
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+
+		li{
+			display: inline-block;
+			float: left;
+		}
+	}
+}
+
+ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position: relative;
+	z-index: 999;
+
+	li {
+		display:inline-block;
+		float: left;
+		margin-right: 1px;
+
+		&:hover a {
+			background: @primary-nav-hover-bg;
+
+			&:hover + .hidden, .hidden:hover {
+				display: block;
+			}
+		}
+
+		&:hover ul a {
+			background: @secondary-nav-bg;
+			color: #000;
+		
+			&:hover {
+				color: #000;
+				background: @secondary-nav-hover-bg;
+			}
+		}
+
+		a {
+			width: auto;
+			padding: 0 20px;
+
+			&:hover + .hidden, .hidden:hover {
+				display: block;
+
+				li {
+					display: block;
+					float: none;
+				}
+			}
+		}
+
+		ul {
+			display: none;
+			position: absolute;
+
+			&.hidden:hover {
+				display: block;
+
+				li {
+					display: block;
+					float: none;
+				}
+			}
+			
+			li {
+				display: block;
+				float: none;
+			}
+		}
+		
+		a {
+			display:block;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: #000;
+			text-decoration: none;
+		}
+
+	}
+}
+
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: #000;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+	width: 50px;
+	height: 50px;
+	float: left;
+
+	.button-strip{
+		position: relative;
+		height: 3px;
+		width: 30px;
+		margin: 0 auto;
+		background: #fff;
+		display: block;
+		margin: 5px auto;
+	}
+}
+
+
+input[type=checkbox]{
+    display: none;
+    -webkit-appearance: none;
+}
+input[type=checkbox]:checked ~ .dropdown{
+	display: block;
+	position: relative;
+	background: white;
+	z-index: 99;
+}
+
+@media (max-width: @breakpoint_small) {
+
+	ul li ul {
+	  display: none;
+	  position: relative;
+	}
+	
+	header ul li{
+		border-top: 1px #000 solid;
+	}
+
+	ul {
+		position: static;
+		display: none;
+	
+		li {
+			margin-bottom: 1px;
+			width: 100%;
+
+			a {
+				width: 100%;
+			}
+		}
+
+	}
+	
+	.show-menu {
+		display:block;
+	}
+
+	.navbar{
+		.header-mobile{
+			display: block;
+			float: left;
+		}
+
+		.mobile-toggle:focus ~ .dropdown{
+				height:auto;
+			
+		}
+
+		ul{
+			width: 100%;
+
+			li{
+				width: 100%;
+			}
+		}
+	}
+}

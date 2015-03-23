@@ -1,12 +1,26 @@
 html {
     font-size: 62.5%;
+    height:100%;
 }
+
 
 body {
     color: @type_color_default;
     -webkit-font-smoothing: antialiased;
     line-height: 1.625;
     .font-size(1.6);
+    min-height:100%;
+}
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    position:relative;
 }
 
 .center {
@@ -49,12 +63,17 @@ em {
 }
 
 p {
-
-    &:first-of-type {
-        margin-top: 0;
-    }
+    margin: 0;
+    margin-bottom: 10px;
+    // &:first-of-type {
+    //     margin-top: 0;
+    // }
     
-    &:last-of-type {
-        margin-bottom: 30px;
-    }
+    // &:last-of-type {
+    //     margin-bottom: 30px;
+    // }
+}
+
+.fine-print{
+    font-size:10px;
 }

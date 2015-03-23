@@ -1,0 +1,135 @@
+.vert-centered{
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+.vert-bottom{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.vert-top{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
+.box:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+.border-bottom{
+	border-bottom: 1px @border_color solid;
+}
+
+.border-top{
+	border-top: 1px @border_color solid;
+}
+
+@media (max-width: @breakpoint_medium) {
+	.table-child{
+		float: left !important;
+		min-height: 150px;
+	}
+}
+
+@media (min-width: @breakpoint_medium) {
+	/*Full Height Divs*/
+	.table{
+		display: table;
+	}
+
+	.table-child{
+		display: table-cell;
+		float: none;
+	}
+}
+
+
+
+.oh{
+	overflow: hidden;
+}
+
+.full-width{
+	width: 100%;
+}
+
+
+
+.main-bg {
+  background: @main_bg;
+}
+
+.secondary-bg {
+  background: @secondary_bg;
+}
+
+
+@media (min-width: @breakpoint_small) {
+	.make-rule(100);
+
+	.make-rule(@n, @i: 1) when (@i =< @n) {
+	  .vpadding-@{i} {
+	    padding-top: @i*1px;
+	    padding-bottom: @i*1px;
+	  }
+
+	  .padding-right-@{i} {
+	    padding-right: @i*1px;
+	  }
+
+	  .padding-left-@{i} {
+	    padding-left: @i*1px;
+	  }
+
+	  .padding-top-@{i} {
+	    padding-top: @i*1px;
+	  }
+
+	  .padding-bottom-@{i} {
+	    padding-bottom: @i*1px;
+	  }
+
+	  .vmargin-@{i} {
+	    margin-top: @i*1px;
+	    margin-bottom: @i*1px;
+	  }
+
+	  .margin-right-@{i} {
+	    margin-right: @i*1px;
+	  }
+
+	  .margin-left-@{i} {
+	    margin-left: @i*1px;
+	  }
+
+	  .margin-top-@{i} {
+	    margin-top: @i*1px;
+	  }
+
+	  .margin-bottom-@{i} {
+	    margin-bottom: @i*1px;
+	  }
+
+	  .make-rule(@n, (@i + 1));
+	}
+}

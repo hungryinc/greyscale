@@ -17,18 +17,13 @@ body {
     @media (max-width: @breakpoint_small) {
 
     }
-
 }
 
-header {
-    background: @white;
-}
 
 footer {
-
     position: relative;
-    height: @footer_height;
     background: #d1d1d1;
+    padding-top: 30px;
 }
 
 .wrapper {
@@ -46,6 +41,15 @@ footer {
         display: block;
     }
 
+}
+
+.content{
+    overflow: hidden;
+}
+
+.section{
+    padding-top:@section-padding-top;
+    padding-bottom:@section-padding-bottom;
 }
 
 /* Lists */
