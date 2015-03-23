@@ -41,90 +41,80 @@ header {
 		}
 	}
 
-	ul{
-		list-style: none;
-		padding: 0;
+	ul {
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		position: relative;
+		z-index: 999;
 
-		li{
-			display: inline-block;
+		li {
+			display:inline-block;
 			float: left;
-		}
-	}
-}
+			margin-right: 1px;
 
-ul {
-	list-style-type:none;
-	margin:0;
-	padding:0;
-	position: relative;
-	z-index: 999;
+			&:hover a {
+				background: @primary-nav-hover-bg;
 
-	li {
-		display:inline-block;
-		float: left;
-		margin-right: 1px;
-
-		&:hover a {
-			background: @primary-nav-hover-bg;
-
-			&:hover + .hidden, .hidden:hover {
-				display: block;
-			}
-		}
-
-		&:hover ul a {
-			background: @secondary-nav-bg;
-			color: #000;
-		
-			&:hover {
-				color: #000;
-				background: @secondary-nav-hover-bg;
-			}
-		}
-
-		a {
-			width: auto;
-			padding: 0 20px;
-
-			&:hover + .hidden, .hidden:hover {
-				display: block;
-
-				li {
+				&:hover + .hidden, .hidden:hover {
 					display: block;
-					float: none;
 				}
 			}
-		}
 
-		ul {
-			display: none;
-			position: absolute;
+			&:hover ul a {
+				background: @secondary-nav-bg;
+				color: #000;
+			
+				&:hover {
+					color: #000;
+					background: @secondary-nav-hover-bg;
+				}
+			}
 
-			&.hidden:hover {
-				display: block;
+			a {
+				width: auto;
+				padding: 0 20px;
 
+				&:hover + .hidden, .hidden:hover {
+					display: block;
+
+					li {
+						display: block;
+						float: none;
+					}
+				}
+			}
+
+			ul {
+				display: none;
+				position: absolute;
+
+				&.hidden:hover {
+					display: block;
+
+					li {
+						display: block;
+						float: none;
+					}
+				}
+				
 				li {
 					display: block;
 					float: none;
 				}
 			}
 			
-			li {
-				display: block;
-				float: none;
+			a {
+				display:block;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				color: #000;
+				text-decoration: none;
 			}
-		}
-		
-		a {
-			display:block;
-			height: 50px;
-			text-align: center;
-			line-height: 50px;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			color: #000;
-			text-decoration: none;
-		}
 
+		}
 	}
 }
 

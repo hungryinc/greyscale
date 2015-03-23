@@ -11,6 +11,20 @@ form {
         padding: 17px;
         margin-bottom: 10px;
         resize: none;
+
+        &.solid{
+            
+        }
+
+        &.hollow{
+            background: transparent;
+            border:2px @border_color solid;
+        }
+
+        &.single{
+            background: transparent;
+            border-bottom: 2px @border_color solid;
+        }
     }
 
     [type="checkbox"],
