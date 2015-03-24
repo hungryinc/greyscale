@@ -1,48 +1,34 @@
-.container {
-    width: 100%;
-    max-width: @container_width;
-    margin: 0 auto;
-    padding-right: @container_padding_right;
-    padding-left: @container_padding_left;
-
-    &:after {
-        content: " ";
-        display: block;
-        clear: both;
-    }
-}
-
-    [class*='col_'] {
-        float: left;
+    .container {
         width: 100%;
-        vertical-align: top;
-        /*min-height: @col_min_height;*/
-        position: relative;
-        padding-right: @col_padding_right;
-        padding-left: @col_padding_left;
+        max-width: @container_width;
+        margin: 0 auto;
+        padding-right: @container_padding_right;
+        padding-left: @container_padding_left;
 
-        [class*='col_'] {
-            padding: 20px;
-        }
-
-        > .content {
-            width: 100%;
-            min-height: 40px;
-            overflow:hidden;
-        }
-
-        .bleed {
-            padding: 0;
-        }
-
-        &.right {
-            text-align: right;
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
         }
     }
 
-    [class*='col_full_'] {
-        margin: 0 auto;
-        float: none;
+
+    .center {
+        float:none !important;
+        margin: 0 auto !important;
+    }
+    .content {
+        width: 100%;
+        min-height: 40px;
+        overflow:hidden;
+    }
+
+    .bleed {
+        padding: 0;
+    }
+
+    &.right {
+        text-align: right;
     }
 
     .attach_bottom {
@@ -50,91 +36,379 @@
         bottom: 0;
     }
 
+    ////////////////////////////
+    //Mobile Settings for Grid//
+    ////////////////////////////
+
+
+    .make-half(2);
+    .half{
+        width: 100%;
+    }
+    .make-half(@n, @i: 1) when (@i =< @n) {
+      .half-@{i} {
+        width: 100%;
+      }
+      .make-half(@n, (@i + 1));
+    }
+
+    .make-third(3);
+    .third{width: 100%;}
+    .make-third(@n, @i: 1) when (@i =< @n) {
+      .third-@{i} {
+        width: 100%;
+      }
+      .make-third(@n, (@i + 1));
+    }
+
+    .make-fourth(4);
+    .fourth{width: 100%;}
+    .make-fourth(@n, @i: 1) when (@i =< @n) {
+
+      .fourth-@{i} {
+        width: 100%;
+      }
+      .make-fourth(@n, (@i + 1));
+    }
+
+    .make-fifth(5);
+    .fifth{width: 100%;}
+    .make-fifth(@n, @i: 1) when (@i =< @n) {
+
+      .fifth-@{i} {
+        width: 100%;
+      }
+      .make-fifth(@n, (@i + 1));
+    }
+
+    .make-sixth(6);
+    .sixth{width: 100%;}
+    .make-sixth(@n, @i: 1) when (@i =< @n) {
+
+      .sixth-@{i} {
+        width: 100%;
+      }
+      .make-sixth(@n, (@i + 1));
+    }
+
+    .make-seventh(7);
+    .seventh{width: 100%;}
+    .make-seventh(@n, @i: 1) when (@i =< @n) {
+
+      .seventh-@{i} {
+        width: 100%;
+      }
+      .make-seventh(@n, (@i + 1));
+    }
+
+    .make-eighth(8);
+    .eighth{width: 100%;}
+    .make-eighth(@n, @i: 1) when (@i =< @n) {
+
+      .eighth-@{i} {
+        width: 100%;
+      }
+      .make-eighth(@n, (@i + 1));
+    }
+
+    .make-ninth(9);
+    .ninth{width: 100%;}
+    .make-ninth(@n, @i: 1) when (@i =< @n) {
+
+      .ninth-@{i} {
+        width: 100%;
+      }
+      .make-ninth(@n, (@i + 1));
+    }
+
+    .make-tenth(10);
+    .tenth{width: 100%;}
+    .make-tenth(@n, @i: 1) when (@i =< @n) {
+
+      .tenth-@{i} {
+        width: 100%;
+      }
+      .make-tenth(@n, (@i + 1));
+    }
+
+
+
+    @media (max-width: @breakpoint_small) {
+        .half-small{
+            width: 50% !important;
+            float: left;
+        }
+    }
+    ////////////////////////////
+    //Tablet Settings for Grid//
+    ////////////////////////////
     @media (min-width: @breakpoint_small) {
 
-        .col_full_quarter {
+
+        .mid.fourth {
             width: 50%;
         }
 
-        .col_full_half {
+        .mid.half {
             width: 50% !important;
         }
 
-        .col_half {
-            width: 100%;
-        }
-        
-        .col_quarter {
+        .make-half(2);
+        .half{
             width: 50%;
+            float: left;
+        }
+        .make-half(@n, @i: 1) when (@i =< @n) {
+          .half-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-half(@n, (@i + 1));
         }
 
-        .col_sixth {
-            width: 16.6666666666666665%;
+        .make-third(3);
+        .third{
+            width: 33.33333333%;
+            float: left;
+        }
+        .make-third(@n, @i: 1) when (@i =< @n) {
+          .third-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-third(@n, (@i + 1));
         }
 
-        .col_eighth {
+        .make-fourth(4);
+        .fourth{
+            width: 50%;
+            float: left;
+        }
+        .make-fourth(@n, @i: 1) when (@i =< @n) {
+
+          .fourth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-fourth(@n, (@i + 1));
+        }
+
+        .make-fifth(5);
+        .fifth{
+            width: 20%;
+            float: left;
+        }
+        .make-fifth(@n, @i: 1) when (@i =< @n) {
+
+          .fifth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-fifth(@n, (@i + 1));
+        }
+
+        .make-sixth(6);
+        .sixth{
+            width: 16.66666667%;
+            float: left;
+        }
+        .make-sixth(@n, @i: 1) when (@i =< @n) {
+
+          .sixth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-sixth(@n, (@i + 1));
+        }
+
+        .make-seventh(7);
+        .seventh{
+            width: 14.28571429%;
+            float: left;
+        }
+        .make-seventh(@n, @i: 1) when (@i =< @n) {
+
+          .seventh-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-seventh(@n, (@i + 1));
+        }
+
+        .make-eighth(8);
+        .eighth{
             width: 12.5%;
+            float: left;
+        }
+        .make-eighth(@n, @i: 1) when (@i =< @n) {
+
+          .eighth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-eighth(@n, (@i + 1));
+        }
+
+        .make-ninth(9);
+        .ninth{
+            width: 11.11111111%;
+            float: left;
+        }
+        .make-ninth(@n, @i: 1) when (@i =< @n) {
+
+          .ninth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-ninth(@n, (@i + 1));
+        }
+
+        .make-tenth(10);
+        .tenth{
+            width: 10%;
+            float: left;
+        }
+        .make-tenth(@n, @i: 1) when (@i =< @n) {
+
+          .tenth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-tenth(@n, (@i + 1));
         }
 
     }
 
     @media (min-width: @breakpoint_medium) {
 
-        [class*='col_full'] {
+        .full{
             width: 100%;
         }
 
-        [class*='col_half'] {
+        .make-half(2);
+        .half{
             width: 50%;
+            float: left;
         }
-
-        /*     
-        .make-grid(100);
-
-        .make-grid(@n, @i: 1) when (@i =< @n) {
-          .col_@{i} {
+        .make-half(@n, @i: 1) when (@i =< @n) {
+          .half-@{i} {
             width: (@i * 100% / @n);
+            float: left;
           }
-          .make-grid(@n, (@i + 1));
-        }
-        */
-
-        .col_fifth{
-            width: percentage(1/5);
+          .make-half(@n, (@i + 1));
         }
 
-        .col_full_quarter {
+        .make-third(3);
+        .third{
+            width: 33.33333333%;
+            float: left;
+        }
+        .make-third(@n, @i: 1) when (@i =< @n) {
+          .third-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-third(@n, (@i + 1));
+        }
+
+        .make-fourth(4);
+        .fourth{
             width: 25%;
+            float: left;
+        }
+        .make-fourth(@n, @i: 1) when (@i =< @n) {
+
+          .fourth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-fourth(@n, (@i + 1));
         }
 
-        .col_half_quarter {
-            padding: 0 10%;
+        .make-fifth(5);
+        .fifth{
+            width: 20%;
+            float: left;
+        }
+        .make-fifth(@n, @i: 1) when (@i =< @n) {
+
+          .fifth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-fifth(@n, (@i + 1));
         }
 
-        .col_third {
-            width: 33.33333333333332%;
+        .make-sixth(6);
+        .sixth{
+            width: 16.66666667%;
+            float: left;
+        }
+        .make-sixth(@n, @i: 1) when (@i =< @n) {
 
+          .sixth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-sixth(@n, (@i + 1));
         }
 
-        .col_two_thirds {
-            width: 66.666666666666665%;
+        .make-seventh(7);
+        .seventh{
+            width: 14.28571429%;
+            float: left;
+        }
+        .make-seventh(@n, @i: 1) when (@i =< @n) {
+
+          .seventh-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-seventh(@n, (@i + 1));
         }
 
-        .col_quarter {
-            width: 25%;
+        .make-eighth(8);
+        .eighth{
+            width: 12.5%;
+            float: left;
+        }
+        .make-eighth(@n, @i: 1) when (@i =< @n) {
+
+          .eighth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-eighth(@n, (@i + 1));
         }
 
-        [class*='col_'] {
-            &.prefix_sixth {
-                padding-left: 16.666666667%;
-            }
+        .make-ninth(9);
+        .ninth{
+            width: 11.11111111%;
+            float: left;
+        }
+        .make-ninth(@n, @i: 1) when (@i =< @n) {
 
-            &.suffix_sixth {
-                padding-right: 16.666666667%;
-            }
-
+          .ninth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-ninth(@n, (@i + 1));
         }
 
+        .make-tenth(10);
+        .tenth{
+            width: 10%;
+            float: left;
+        }
+        .make-tenth(@n, @i: 1) when (@i =< @n) {
+
+          .tenth-@{i} {
+            width: (@i * 100% / @n);
+            float: left;
+          }
+          .make-tenth(@n, (@i + 1));
+        }
+   
     }
 
 

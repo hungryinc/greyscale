@@ -1,10 +1,10 @@
 <style>
-.example-code.container [class*='col_']{
+.example-code.container .content div{
 	background: #f5f6f5;
 	border: 1px #e5e5e5 solid;
 }
 
-.example-code [class*='col_']{
+.example-code .content div{
 	min-height: 200px;
 }
 
@@ -64,7 +64,7 @@
 </header>	
 
 <div class="hero-area">
-	<div class="col_full_half vert-centered">
+	<div class="center fourth vert-centered">
 		<h1>Hero Space Text</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		<button>Learn More</button>
@@ -74,10 +74,10 @@
 <div class="section">
 	<div class="container">
 		<div class="content table vpadding-40">
-			<div class="col_two_thirds table-child">
+			<div class="third-2 table-child">
 
 			</div>
-			<div class="col_third table-child">
+			<div class="third table-child">
 				<h2>Header Goes Here</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				<div class="full-width">
@@ -90,7 +90,7 @@
 
 <div class="section">
 	<div class="container">
-		<div class="content col_full_half text-center">
+		<div class="content center half text-center">
 			<h2>Section Header H2</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		</div>
@@ -100,25 +100,25 @@
 <div class="section">
 	<div class="container">
 		<div class="content">
-			<div class="icon-box col_quarter text-center">
+			<div class="icon-box fourth text-center">
 				<i class="fa fa-subway fa-lg"></i>
 				<p class="icon-title">Box Title</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 
-			<div class="icon-box col_quarter text-center">
+			<div class="icon-box fourth text-center">
 				<i class="fa fa-train fa-lg"></i>
 				<p class="icon-title">Box Title</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 
-			<div class="icon-box col_quarter text-center">
+			<div class="icon-box fourth text-center">
 				<i class="fa fa-motorcycle fa-lg"></i>
 				<p class="icon-title">Box Title</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 
-			<div class="icon-box col_quarter text-center">
+			<div class="icon-box fourth text-center">
 				<i class="fa fa-ship fa-lg"></i>
 				<p class="icon-title">Box Title</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -129,7 +129,7 @@
 
 <div class="section">
 	<div class="container">
-		<div class="col_full_half signup text-center">
+		<div class="center half signup text-center">
 			<h2>Sign In</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 			<form class="field-box">
@@ -160,22 +160,7 @@
 <div class="section">
 	<div class="container example-code">
 		<h2 class="section-title">Squares (.box)</h2>
-		<div class="col_quarter box">
-			<div class="">
-				<div class="vert-bottom">
-					<h3 class="text-center">
-						Skis
-					</h3>
-					<p class="text-center">
-						<span class="bold">
-							$14
-						</span>
-						/mo.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col_quarter">
+		<div class="fourth half-m">
 			<div class="box">
 				<div class="vert-bottom">
 					<h3 class="text-center">
@@ -190,7 +175,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col_quarter">
+		<div class="fourth half-m">
 			<div class="box">
 				<div class="vert-bottom">
 					<h3 class="text-center">
@@ -205,7 +190,22 @@
 				</div>
 			</div>
 		</div>
-		<div class="col_quarter">
+		<div class="fourth half-m">
+			<div class="box">
+				<div class="vert-bottom">
+					<h3 class="text-center">
+						Skis
+					</h3>
+					<p class="text-center">
+						<span class="bold">
+							$14
+						</span>
+						/mo.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="fourth half-m">
 			<div class="box">
 				<div class="vert-bottom">
 					<h3 class="text-center">
@@ -248,61 +248,128 @@
 <div class="section">
 	<div class="container example-code">
 		<h2 class="section-title">Grid</h2>
+
 		<div class="content">
-			<div class="col_quarter">.col_quarter</div>
-			<div class="col_quarter">.col_quarter</div>
-			<div class="col_quarter">.col_quarter</div>
-			<div class="col_quarter">.col_quarter</div>
+			<div class="half">.half</div>
+			<div class="half">.half</div>
 		</div>
 
 		<div class="content">
-			<div class="col_fifth">.col_fifth</div>
-			<div class="col_fifth">.col_fifth</div>
-			<div class="col_fifth">.col_fifth</div>
-			<div class="col_fifth">.col_fifth</div>
-			<div class="col_fifth">.col_fifth</div>
+			<div class="third">.third</div>
+			<div class="third">.third</div>
+			<div class="third">.third</div>
 		</div>
 
 		<div class="content">
-			<div class="col_half">.col_half</div>
-			<div class="col_half">.col_half</div>
+			<div class="fourth">.fourth</div>
+			<div class="fourth">.fourth</div>
+			<div class="fourth">.fourth</div>
+			<div class="fourth">.fourth</div>
 		</div>
 
 		<div class="content">
-			<div class="col_two_thirds">.col_two_thirds</div>
-			<div class="col_third">.col_third</div>
+			<div class="fifth">.fifth</div>
+			<div class="fifth">.fifth</div>
+			<div class="fifth">.fifth</div>
+			<div class="fifth">.fifth</div>
+			<div class="fifth">.fifth</div>
 		</div>
 
 		<div class="content">
-			<div class="col_third">.col_third</div>
-			<div class="col_third">.col_third</div>
-			<div class="col_third">.col_third</div>
+			<div class="sixth">.sixth</div>
+			<div class="sixth">.sixth</div>
+			<div class="sixth">.sixth</div>
+			<div class="sixth">.sixth</div>
+			<div class="sixth">.sixth</div>
+			<div class="sixth">.sixth</div>
 		</div>
 
 		<div class="content">
-			<div class="col_sixth">.col_sixth</div>
-			<div class="col_sixth">.col_sixth</div>
-			<div class="col_sixth">.col_sixth</div>
-			<div class="col_sixth">.col_sixth</div>
-			<div class="col_sixth">.col_sixth</div>
-			<div class="col_sixth">.col_sixth</div>
-		</div>
-
-			
-		<div class="content">
-			<div class="col_full_quarter">.col_full_quarter</div>
-			<div class="col_full_quarter">.col_full_quarter</div>
-			<div class="col_full_quarter">.col_full_quarter</div>
-			<div class="col_full_quarter">.col_full_quarter</div>
+			<div class="seventh">.seventh</div>
+			<div class="seventh">.seventh</div>
+			<div class="seventh">.seventh</div>
+			<div class="seventh">.seventh</div>
+			<div class="seventh">.seventh</div>
+			<div class="seventh">.seventh</div>
+			<div class="seventh">.seventh</div>
 		</div>
 
 		<div class="content">
-			<div class="col_full_half">.col_full_half</div>
-			<div class="col_full_half">.col_full_half</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+			<div class="eighth">.eighth</div>
+		</div>
+
+		<div class="content">
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+			<div class="ninth">.ninth</div>
+		</div>
+
+		<div class="content">
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+			<div class="tenth">.tenth</div>
+		</div>
+
+		<h2 class="margin-top-50">Half Width Divs on Mobile</h2>
+		<div class="content">
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+			<div class="tenth half-m">.tenth.half-m</div>
+		</div>
+
+		<h2 class="margin-top-50">Centered Divs</h2>
+		<div class="content">
+			<div class="center half">.center.half</div>
+			<div class="center half">.center.half</div>
+			<div class="center half">.center.half</div>
+			<div class="center half">.center.half</div>
+		</div>
+
+		<div class="content">
+			<div class="center fourth">.center.fourth</div>
+			<div class="center fourth">.center.fourth</div>
 		</div> 
 
 
-		<button>Submit</button>
+		<h2 class="margin-top-50">Multiples</h2>
+		<div class="content">
+			<div class="third-2">.third-2</div>
+			<div class="third">.third</div>
+		</div>
+
+		<div class="content">
+			<div class="ninth-5">.ninth-5</div>
+			<div class="ninth-4">.ninth-4</div>
+		</div>
+
+<!-- 		<button>Submit</button>
 
 		<div class="btn-toggle">
 			<button class="btn">Back</button>
@@ -315,7 +382,7 @@
 			<textarea></textarea>
 			<input type="checkbox">
 			<input type="radio">
-		</form>	
+		</form>	 -->
 
 	</div>
 </div>
