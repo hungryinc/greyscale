@@ -22,12 +22,9 @@ var argv = require('yargs').argv,
     build = argv.build;
 
 
-if ( ! build) {
     var livereload = require('gulp-livereload');
     gulp.task('default', ['less']);
-} else {
-    gulp.task('default', ['less' ]);
-}
+
 
 var paths = {
     less: 'less/**/*',
@@ -50,18 +47,11 @@ gulp.task('less', function() {
             sourceMap: true
         }))
         .pipe(gulp.dest('css'))
-
-        if ( ! build) {
-            process.pipe(livereload());
-        } else {
-            process.pipe(minifyCSS())
-                .pipe(gulp.dest('css'));
-        }
+         process.pipe(livereload());
 });
 
 
 gulp.task('watch', function() {
-    if ( ! build) {
         gulp.watch(paths.less, ['less']);
-    }
+    
 });

@@ -1,0 +1,49 @@
+@gridwidth : 12;
+
+//Small 
+.small-attr(@count) when ( @count > 0 ) {
+  @base: e('[column="');
+  @end: e('"]');
+  @{base}@{count}@{end} {
+    width: percentage(@count/@gridwidth);
+        float: left;
+    }
+  .small-attr( @count - 1 );
+}
+
+.small-attr(@gridwidth);
+
+@media (min-width: @breakpoint_small) {
+
+	//Medium
+	.medium-attr(@count) when ( @count > 0 ) {
+	  @base: e('[column-');
+	  @size: e('m="');
+	  @end: e('"]');
+	  @{base}@{size}@{count}@{end} {
+	    width: percentage(@count/@gridwidth);
+        float: left;
+	    }
+	  .medium-attr( @count - 1 );
+	}
+
+	.medium-attr(@gridwidth);
+
+}
+
+
+@media (min-width: @breakpoint_medium) {
+	//Large
+	.large-attr(@count) when ( @count > 0 ) {
+	  @base: e('[column-');
+	  @size: e('l="');
+	  @end: e('"]');
+	  @{base}@{size}@{count}@{end} {
+	    width: percentage(@count/@gridwidth);
+        float: left;
+	    }
+	  .large-attr( @count - 1 );
+	}
+
+	.large-attr(@gridwidth);
+}
