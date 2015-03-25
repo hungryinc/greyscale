@@ -184,6 +184,34 @@
               }
               .make-tenth(@n, (@i + 1));
             }
+
+            .make-eleventh(11);
+            &eleventh{
+                width: 9.0909090909%;
+                float: left;
+            }
+            .make-eleventh(@n, @i: 1) when (@i =< @n) {
+
+              &eleventh-@{i} {
+                width: (@i * 100% / @n);
+                float: left;
+              }
+              .make-eleventh(@n, (@i + 1));
+            }
+
+            .make-twelfth(12);
+            &twelfth{
+                width: 8.3333333333%;
+                float: left;
+            }
+            .make-twelfth(@n, @i: 1) when (@i =< @n) {
+
+              &twelfth-@{i} {
+                width: (@i * 100% / @n);
+                float: left;
+              }
+              .make-twelfth(@n, (@i + 1));
+            }
         
     }
 
@@ -337,6 +365,34 @@
               }
               .make-tenth(@n, (@i + 1));
             }
+
+            .make-eleventh(11);
+            &eleventh{
+                width: 9.0909090909%;
+                float: left;
+            }
+            .make-eleventh(@n, @i: 1) when (@i =< @n) {
+
+              &eleventh-@{i} {
+                width: (@i * 100% / @n);
+                float: left;
+              }
+              .make-eleventh(@n, (@i + 1));
+            }
+
+            .make-twelfth(12);
+            &twelfth{
+                width: 8.3333333333%;
+                float: left;
+            }
+            .make-twelfth(@n, @i: 1) when (@i =< @n) {
+
+              &twelfth-@{i} {
+                width: (@i * 100% / @n);
+                float: left;
+              }
+              .make-twelfth(@n, (@i + 1));
+            }
         }
 
     }
@@ -476,6 +532,34 @@
                 float: left;
               }
               .make-tenth(@n, (@i + 1));
+            }
+
+            .make-eleventh(11);
+            &eleventh{
+                width: 9.0909090909%;
+                float: left;
+            }
+            .make-eleventh(@n, @i: 1) when (@i =< @n) {
+
+              &eleventh-@{i} {
+                width: (@i * 100% / @n);
+                float: left;
+              }
+              .make-eleventh(@n, (@i + 1));
+            }
+
+            .make-twelfth(12);
+            &twelfth{
+                width: 8.3333333333%;
+                float: left;
+            }
+            .make-twelfth(@n, @i: 1) when (@i =< @n) {
+
+              &twelfth-@{i} {
+                width: (@i * 100% / @n);
+                float: left;
+              }
+              .make-twelfth(@n, (@i + 1));
             }
         }
     }

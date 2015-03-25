@@ -88,6 +88,26 @@
 }
 
 
+.clear:before {
+  content: '';
+  display: table;
+}
+.clear:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.no-clear:before {
+  content: normal;
+  display: inherit;
+}
+.no-clear:after {
+  content: normal;
+  display: inherit;
+  clear: none;
+}
+
+
 @media (min-width: @breakpoint_small) {
 	.make-rule(100);
 
