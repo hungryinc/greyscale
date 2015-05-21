@@ -27,7 +27,7 @@ var argv = require('yargs').argv,
 
 
 var paths = {
-    less: 'less/**/*',
+    less: 'greyscale/**',
 }
 
 var onError = function(err) {
@@ -38,7 +38,7 @@ var onError = function(err) {
 
 
 gulp.task('less', function() {
-    var process = gulp.src('less/main.less')
+    var process = gulp.src('main.less')
         .pipe(plumber({
             errorHandler: onError
         }))
@@ -46,7 +46,7 @@ gulp.task('less', function() {
             paths: [path.join(__dirname, 'less', 'includes')],
             sourceMap: true
         }))
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest(''))
          process.pipe(livereload());
 });
 
