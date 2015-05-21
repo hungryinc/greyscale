@@ -1,49 +1,176 @@
 @gridwidth : 12;
 
+
+	[column-m="12"] {
+		margin-bottom: 20px;
+	}
+
+
+
 //Small 
-.small-attr(@count) when ( @count > 0 ) {
-  @base: e('[column="');
-  @end: e('"]');
-  @{base}@{count}@{end} {
-    width: percentage(@count/@gridwidth);
-        float: left;
-    }
-  .small-attr( @count - 1 );
+	.outer-loop(@count) when ( @count > 0 ) {
+		@base: e('[column');
+		@dash: e('/');
+		@size: e('="');
+		@end: e('"]');
+
+		.inner-loop(@topNumber) when ( @topNumber > 0 ) {
+			@{base}@{size}@{topNumber}@{dash}@{count}@{end} {
+				width: percentage(@topNumber/@count);
+				float: left;
+				padding-left: 1vw;
+				padding-right: 1vw;
+				margin-bottom: 0px;
+			}
+			.inner-loop(@topNumber - 1);
+		}
+		.inner-loop(@count);
+	 	.outer-loop( @count - 1 );
+	}
+	.outer-loop(@gridwidth);
+
+	
+// .small-attr(@count) when ( @count > 0 ) {
+//   @base: e('[column="');
+//   @end: e('"]');
+//   @{base}@{count}@{end} {
+//     width: percentage(@count/@gridwidth);
+//         float: left;
+//         padding-left: 1vw;
+//         padding-right: 1vw;
+// 		margin-bottom: 20px;
+//     }
+//   .small-attr( @count - .2 );
+// }
+
+// .small-attr(@gridwidth);
+[column*="12"]{
+	&[column*="12"]{
+		//padding: 0;
+	}
 }
 
-.small-attr(@gridwidth);
 
 @media (min-width: @breakpoint_small) {
 
-	//Medium
-	.medium-attr(@count) when ( @count > 0 ) {
-	  @base: e('[column-');
-	  @size: e('m="');
-	  @end: e('"]');
-	  @{base}@{size}@{count}@{end} {
-	    width: percentage(@count/@gridwidth);
-        float: left;
-	    }
-	  .medium-attr( @count - 1 );
+
+
+.grid-example{
+	.tablet-text{
+		font-weight: bold;
+	}
+	.mobile-text,.desktop-text{
+		font-weight: 100;
+	}
+}
+
+	.featured{
+		width: 50% !important;
 	}
 
-	.medium-attr(@gridwidth);
+	//Medium
+	.outer-loop(@count) when ( @count > 0 ) {
+	  @base: e('[column-');
+	  @dash: e('/');
+	  @size: e('m="');
+	  @end: e('"]');
+
+
+	  .inner-loop(@topNumber) when ( @topNumber > 0 ) {
+	  	 // @topNumber : @count;
+		  @{base}@{size}@{topNumber}@{dash}@{count}@{end} {
+		    width: percentage(@topNumber/@count);
+	        float: left;
+	        padding-left: 1vw;
+	        padding-right: 1vw;
+			margin-bottom: 0px;
+		  }
+		  .inner-loop(@topNumber - 1);
+	   }
+	   .inner-loop(@count);
+	  .outer-loop( @count - 1 );
+	}
+
+	.outer-loop(@gridwidth);
+
+	// .medium-attr(@count) when ( @count > 0 ) {
+	//   @base: e('[column-');
+	//   @size: e('m="');
+	//   @end: e('"]');
+	//   @{base}@{size}@{count}@{end} {
+	//     width: percentage(@count/@gridwidth);
+ //        float: left;
+ //        padding-left: 1vw;
+ //        padding-right: 1vw;
+	// 	margin-bottom: 0px;
+	//     }
+	//   .medium-attr( @count - .2 );
+	// }
+
+	// .medium-attr(@gridwidth);
+
+	// [column-m="12"] {
+	// 	margin-bottom: 20px;
+	// }
 
 }
 
 
 @media (min-width: @breakpoint_medium) {
-	//Large
-	.large-attr(@count) when ( @count > 0 ) {
+
+
+	//TEST CODE
+
+.grid-example{
+	.desktop-text{
+		font-weight: bold;
+	}
+	.mobile-text,.tablet-text{
+		font-weight: 100;
+	}
+}
+
+	.outer-loop(@count) when ( @count > 0 ) {
 	  @base: e('[column-');
+	  @dash: e('/');
 	  @size: e('l="');
 	  @end: e('"]');
-	  @{base}@{size}@{count}@{end} {
-	    width: percentage(@count/@gridwidth);
-        float: left;
-	    }
-	  .large-attr( @count - 1 );
+
+
+	  .inner-loop(@topNumber) when ( @topNumber > 0 ) {
+	  	 // @topNumber : @count;
+		  @{base}@{size}@{topNumber}@{dash}@{count}@{end} {
+		    width: percentage(@topNumber/@count);
+	        float: left;
+	        padding-left: 1vw;
+	        padding-right: 1vw;
+			margin-bottom: 0px;
+		  }
+		  .inner-loop(@topNumber - 1);
+	   }
+	   .inner-loop(@count);
+	  .outer-loop( @count - 1 );
 	}
 
-	.large-attr(@gridwidth);
+	.outer-loop(@gridwidth);
+
+
+	//Large
+
+
+	// .large-attr(@count) when ( @count > 0 ) {
+	//   @base: e('[column-');
+	//   @size: e('l="');
+	//   @end: e('"]');
+	//   @{base}@{size}@{count}@{end} {
+	//     width: percentage(@count/@gridwidth);
+ //        float: left;
+ //        padding-left: 1vw;
+ //        padding-right: 1vw;
+	// 	margin-bottom: 0px;
+	//     }
+	//   .large-attr( @count - .2 );
+	// }
+
+	// .large-attr(@gridwidth);
 }
