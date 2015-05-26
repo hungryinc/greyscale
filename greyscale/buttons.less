@@ -1,5 +1,6 @@
 .btn,
 button {
+    outline: none;
     border: 1px @btn_default_border_color solid;
     border-radius: 4px;
     padding: 17px 30px;
@@ -41,4 +42,41 @@ button {
         background: @black;
         color: @white;
     }
+}
+
+
+
+button.outline{
+  background: transparent;
+  border: 2px #333 solid;
+  font-family: ProximaNovaA-Bold;
+  font-size: 16px;
+  border-radius: 1px;
+  padding: 20px 60px;
+  max-width: 400px;
+
+  &:hover{
+    border-color: #000;
+  }
+}
+
+button.outline.big{
+  width: 100%;
+  height: 110px;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+button.outline.filled{
+  background: #333;
+  color: #fff;  
+
+  &:hover{
+    background: #000;
+  }
+}
+
+button.no-bg{
+  border:none;
+  background: none;
 }
