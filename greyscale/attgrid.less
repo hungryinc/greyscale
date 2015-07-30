@@ -1,9 +1,17 @@
-@gridwidth : 12;
 
+@media (min-width: @breakpoint_medium) {
+.full-image.domino{
+	margin: 160px;
 
-	[column-m="12"] {
-		margin-bottom: 20px;
+	img{
+		max-width: 100%;
 	}
+}
+
+}
+
+
+@gridwidth : 12;
 
 
 
@@ -29,7 +37,19 @@
 	}
 	.outer-loop(@gridwidth);
 
-	
+
+
+	.small-attr(@count) when ( @count > 0 ) {
+	  @base: e('[column="');
+	  @end: e('"]');
+	  @{base}@{count}@{end} {
+	    width: percentage(@count/@gridwidth);
+	        float: left;
+	    }
+	  .small-attr( @count - 1 );
+	}
+
+	.small-attr(@gridwidth);
 // .small-attr(@count) when ( @count > 0 ) {
 //   @base: e('[column="');
 //   @end: e('"]');
@@ -43,30 +63,10 @@
 //   .small-attr( @count - .2 );
 // }
 
-// .small-attr(@gridwidth);
-[column*="12"]{
-	&[column*="12"]{
-		//padding: 0;
-	}
-}
 
 
 @media (min-width: @breakpoint_small) {
 
-
-
-.grid-example{
-	.tablet-text{
-		font-weight: bold;
-	}
-	.mobile-text,.desktop-text{
-		font-weight: 100;
-	}
-}
-
-	.featured{
-		width: 50% !important;
-	}
 
 	//Medium
 	.outer-loop(@count) when ( @count > 0 ) {
@@ -92,6 +92,24 @@
 	}
 
 	.outer-loop(@gridwidth);
+
+
+
+
+
+
+			.medium-attr(@count) when ( @count > 0 ) {
+	  @base: e('[column-');
+	  @size: e('m="');
+	  @end: e('"]');
+	  @{base}@{size}@{count}@{end} {
+	    width: percentage(@count/@gridwidth);
+        float: left;
+	    }
+	  .medium-attr( @count - 1 );
+	}
+
+	.medium-attr(@gridwidth);
 
 	// .medium-attr(@count) when ( @count > 0 ) {
 	//   @base: e('[column-');
@@ -121,14 +139,7 @@
 
 	//TEST CODE
 
-.grid-example{
-	.desktop-text{
-		font-weight: bold;
-	}
-	.mobile-text,.tablet-text{
-		font-weight: 100;
-	}
-}
+
 
 	.outer-loop(@count) when ( @count > 0 ) {
 	  @base: e('[column-');
@@ -154,6 +165,20 @@
 
 	.outer-loop(@gridwidth);
 
+
+
+	.large-attr(@count) when ( @count > 0 ) {
+	  @base: e('[column-');
+	  @size: e('l="');
+	  @end: e('"]');
+	  @{base}@{size}@{count}@{end} {
+	    width: percentage(@count/@gridwidth);
+        float: left;
+	    }
+	  .large-attr( @count - 1 );
+	}
+
+	.large-attr(@gridwidth);
 
 	//Large
 
